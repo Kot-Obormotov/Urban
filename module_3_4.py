@@ -9,9 +9,9 @@ def single_root_words (root_word, *other_words):
     '''
     same_words = []                                         #пустой список для фиксации результата
     for i in other_words:                                   #проход по списку
-        if i.lower().find(root_word.lower()) != -1:         #поиск слова в слове из списка всё в нижнем регистре
+        if i.lower().find(root_word.lower()) != -1:         #поиск основного слова в слове из списка; всё в нижнем регистре
             same_words.append(i)                            #если есть - добавить
-        elif root_word.upper().find(i.upper()) != -1:       #поиск слова в слове из списка всё в верхнем регистре
+        elif root_word.upper().find(i.upper()) != -1:       #поиск слова из списка в основном слове; всё в верхнем регистре
             same_words.append(i)                            #если есть - добавить
     return same_words
 
