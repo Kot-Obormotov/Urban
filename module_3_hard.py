@@ -12,15 +12,15 @@ data_structure = [
 def summation(data_structure):
     sum = 0                                                             #внутренняя переменная для хранения суммы
     for i in data_structure:
-        if type(i) is int:                                              #определяем возможный тип данных и суммируем значение числа либо длину строки
+        if isinstance(i, int):                                              #определяем возможный тип данных и суммируем значение числа либо длину строки
             sum += i
-        elif type(i) is str:
+        elif isinstance(i, str):
             sum += len(i)
-        elif type(i) is list:                                           #обращение к элементу списка и обработка его по одному из сценариев выше
+        elif isinstance(i, list):                                           #обращение к элементу списка и обработка его по одному из сценариев выше
             sum += summation(i)
-        elif type(i) is dict:
+        elif isinstance(i, dict):
             sum = sum + summation(i.keys()) + summation(i.values())     #обращение к ключу словаря или к значению и обработка по одному из сценариев выше
-        elif type(i) is tuple or set:
+        elif isinstance(i, (tuple, set)):
             sum += summation(list(i))                                   #переформатирование множества или кортежа в список и рекурсивная обработка списка по сценарию выше
     return sum
 
