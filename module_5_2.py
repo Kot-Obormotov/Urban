@@ -1,4 +1,4 @@
-#module_5_1 Атрибуты и методы объекта
+#module_5_2 Специальные методы классов
 
 #Объявим класс House с атрибутами name и number_of_floors
 class House:
